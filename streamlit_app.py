@@ -2,6 +2,11 @@ import streamlit as st
 import numpy as np
 import tensorflow as tf
 
+# Ensure the model file is in the same directory as this script
+# If not, adjust the path accordingly
+# For example, if the model is in a subdirectory called 'models', use:
+# model = tf.keras.models.load_model("models/loan_model.h5")
+
 # Load the Keras model
 model = tf.keras.models.load_model("loan_model.h5")
 
