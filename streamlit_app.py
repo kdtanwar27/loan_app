@@ -1,14 +1,15 @@
 import streamlit as st
 import numpy as np
 import tensorflow as tf
-import os
-
-st.write("Current working directory:", os.getcwd())
-st.write("Files in directory:", os.listdir())
+import joblib
+#st.write("Current working directory:", os.getcwd())
+#st.write("Files in directory:", os.listdir())
 # Load the Keras model
 #model = tf.keras.models.load_model("loan_model.h5")
 #model = tf.keras.models.load_model("loan_model_tf")
 model = tf.keras.models.load_model("loan_model.keras", compile=False)
+
+scaler = joblib.load("scaler.pkl")
 
 
 st.title("💸 Loan Default Risk Prediction")
@@ -48,6 +49,8 @@ if st.button("Evaluate Loan Risk"):
         inq_last_6mths, delinq_2yrs, pub_rec,
         not_fully_paid, purpose_encoded
     ]])
+    # Apply scaler (all 13 features are numeric)
+    input_scaled = scaler.transform(input_data)
 
     prediction = model.predict(input_data)[0][0]  # sigmoid output
     risk = "High" if prediction > 0.5 else "Low"
