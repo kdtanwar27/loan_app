@@ -1,8 +1,10 @@
 import streamlit as st
 import numpy as np
 import tensorflow as tf
+import os
 
-
+st.write("Current working directory:", os.getcwd())
+st.write("Files in directory:", os.listdir())
 # Load the Keras model
 #model = tf.keras.models.load_model("loan_model.h5")
 #model = tf.keras.models.load_model("loan_model_tf")
