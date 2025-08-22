@@ -5,7 +5,9 @@ import tensorflow as tf
 
 # Load the Keras model
 #model = tf.keras.models.load_model("loan_model.h5")
-model = tf.keras.models.load_model("loan_model_tf")
+#model = tf.keras.models.load_model("loan_model_tf")
+model = tf.keras.models.load_model("loan_model.keras")
+
 
 st.title("💸 Loan Default Risk Prediction")
 st.markdown("Enter borrower details to assess the risk of default.")
