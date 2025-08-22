@@ -8,7 +8,7 @@ st.write("Files in directory:", os.listdir())
 # Load the Keras model
 #model = tf.keras.models.load_model("loan_model.h5")
 #model = tf.keras.models.load_model("loan_model_tf")
-model = tf.keras.models.load_model("loan_model.keras")
+model = tf.keras.models.load_model("loan_model.keras", compile=False)
 
 
 st.title("💸 Loan Default Risk Prediction")
