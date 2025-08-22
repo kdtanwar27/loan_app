@@ -2,3 +2,5 @@ streamlit
 pandas
 tensorflow
 numpy
+joblib
+scikit-learn
