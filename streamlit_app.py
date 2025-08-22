@@ -56,4 +56,4 @@ if st.button("Evaluate Loan Risk"):
     risk = "High" if prediction > 0.5 else "Low"
 
     st.subheader("🔍 Prediction Result:")
-    st.success(f"**Loan Risk: {risk}** (Score: {prediction:.2f})")
+    st.success(f"**Loan Risk: {risk}** ")
